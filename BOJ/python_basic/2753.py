@@ -14,4 +14,3 @@ if n % 4 == 0:
 
 else: 
     print(0) 
-        
