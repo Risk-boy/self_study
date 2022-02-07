@@ -1,0 +1,6 @@
+N = int(input())
+
+for i in range(1, N):
+    print('*' * i)
+
+print('*' * N, end ='')
