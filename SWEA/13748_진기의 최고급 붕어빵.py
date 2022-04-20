@@ -20,32 +20,32 @@ for tc in range(1, T+1):
     else:
         print(f'#{tc} Impossible')
 
-# 교수님 풀이
-# def func(n, m, k, lst):  # n = len(lst)
-#     bucket = [0] * 11112
+교수님 풀이
+def func(n, m, k, lst):  # n = len(lst)
+    bucket = [0] * 11112
 
-#     # 손님을 버켓에 등록
-#     for item in lst:
-#         bucket[item]-=1
+    # 손님을 버켓에 등록
+    for item in lst:
+        bucket[item]-=1
 
-#     # 누적합 구하면서 m초에 해당하는 인덱스에
-#     # 도달하면.. 버켓의 값을 k개 증가
-#     # 버켓의 값을 확인 하는데 음수다.. 그러면 꺼버리기
-#     #
-#     if bucket[0] < 0:  # 만약에 손님이 0초에도 온다면..
-#          return 'Impossible'
+    # 누적합 구하면서 m초에 해당하는 인덱스에
+    # 도달하면.. 버켓의 값을 k개 증가
+    # 버켓의 값을 확인 하는데 음수다.. 그러면 꺼버리기
+    #
+    if bucket[0] < 0:  # 만약에 손님이 0초에도 온다면..
+        return 'Impossible'
 
-#     for i in range(1, len(bucket)):
-#         bucket[i] += bucket[i - 1] # 누적합
-#         if i%m==0:
-#             bucket[i]+=k
-#         if bucket[i]<0:
-#             return '불가능'
-#     return '가능'
+    for i in range(1, len(bucket)):
+        bucket[i] += bucket[i - 1] # 누적합
+        if i%m==0:
+            bucket[i]+=k
+        if bucket[i]<0:
+            return '불가능'
+    return '가능'
 
-# t = int(input())
-# for i in range(t):
-#     n, m, k = list(map(int, input().split()))
-#     lst = list(map(int, input().split()))
-#     result = func(n, m, k, lst)
-#     print(f'#{i + 1} {result}')
+t = int(input())
+for i in range(t):
+    n, m, k = list(map(int, input().split()))
+    lst = list(map(int, input().split()))
+    result = func(n, m, k, lst)
+    print(f'#{i + 1} {result}')
